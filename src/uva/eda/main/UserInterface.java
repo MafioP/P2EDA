@@ -16,7 +16,7 @@ public class UserInterface {
     public void init() throws IOException {
         System.out.println("Introduzca el nombre del fichero: ");
         String filename = scanner.nextLine();
-        dataReader = new DataReader("resources/" + filename);
+        dataReader = new DataReader(filename);
         ArrayList<Persona> data = dataReader.readData();
         dataAnalyzer = new DataAnalyzer(data);
         System.out.println("Numero de nombres a mostrar: ");
@@ -35,7 +35,7 @@ public class UserInterface {
             System.out.println();
             long time = System.nanoTime();
             String[] dates = dataReader.splitDateInput(dateInterval);
-            HashMap<String, Integer> interval = dataAnalyzer.sortByDate(dates[0], dates[1]);
+            HashMap<String, Integer> interval = dataAnalyzer.filterByDate(dates[0], dates[1]);
             HashMap<Integer, String> topNames = dataAnalyzer.getTopNames(interval);
             int[] userData = dataAnalyzer.findUsername(interval);
             Results results = dataAnalyzer.getResults();

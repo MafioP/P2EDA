@@ -14,7 +14,7 @@ public class DataAnalyzer {
         results = new Results();
     }
 
-    public HashMap<String, Integer> sortByDate(String startDate, String stopDate) {
+    public HashMap<String, Integer> filterByDate(String startDate, String stopDate) {
         int start = dateConverter(startDate);
         int stop = dateConverter(stopDate);
         results.setIntervalDays(stop - start);

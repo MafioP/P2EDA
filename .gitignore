@@ -1,2 +1,5 @@
 # Project exclude paths
 /out/
+/.idea
+P2EDA.iml
+/resources

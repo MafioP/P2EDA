@@ -16,10 +16,11 @@ public class DataReader {
             BufferedReader reader = new BufferedReader(new FileReader(new File(directory)));
             int entryCount = Integer.parseInt(reader.readLine());
             data = new ArrayList<>(entryCount);
-            long t0, t1, t2;
+            long t0, t1;
             t0 = System.nanoTime();
+            Persona temp;
             for (int i = 0; i < entryCount; i++) {
-                Persona temp = new Persona();
+                temp = new Persona();
                 temp.parseData(reader.readLine());
                 temp.setName(reader.readLine());
                 data.add(temp);
